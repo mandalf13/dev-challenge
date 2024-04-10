@@ -14,3 +14,10 @@ export const getRandomTitles = async (mediaType: string) => {
     const { results } = await res.json();
     return results;
   };
+
+  export const getTitleDetails = async (mediaType: string, titleId: number | string) => {
+    const endpoint = `${API_URL}/${mediaType}/${titleId}?api_key=${API_KEY}&language=en-US`;
+    const res = await fetch(endpoint);
+    const { results } = await res.json();
+    return results;
+  };
