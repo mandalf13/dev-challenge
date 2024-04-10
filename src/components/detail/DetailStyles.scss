@@ -1,0 +1,50 @@
+@use "../../scss/abstracts/variables";
+@use "../../scss/abstracts/mixins";
+
+@mixin gallery-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  margin: 0 auto;
+  @include mixins.md {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @include mixins.lg {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.card {
+  width: 100px;
+  img {
+    border-radius: 5px;
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    &:hover {
+      filter: brightness(1.2);
+      transform: translateY(-5px);
+    }
+  }
+}
+
+.gallery {
+  @include gallery-grid;
+
+  @include mixins.md {
+    $columns: 3;
+  }
+  @include mixins.lg {
+    $columns: 4;
+  }
+  @include mixins.xl {
+    $columns: 5;
+  }
+  .card {
+    width: 100%;
+  }
+}
