@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch } from "../../redux/store";
 import {
